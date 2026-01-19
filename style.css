@@ -1,0 +1,133 @@
+/* Сбрасываем стандартные отступы */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Основной шрифт и цвет */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: white;
+  line-height: 1.5;
+}
+
+.profile-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: -1; /* обязательно! иначе закроет всё */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.avatar img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: contain; /* чтобы SVG не искажался */
+  margin-bottom: 24px;
+}
+
+.profile-info h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+/* Логотип — прижмём к левому краю */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  height: 28px;
+}
+
+.header-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Навигация — по центру */
+nav {
+  display: flex;
+  gap: 16px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+nav button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Кнопка Конструктор — справа */
+.cta-button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .profile-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .profile-info p {
+    font-size: 1rem;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav button {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+
+  .cta-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
